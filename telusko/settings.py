@@ -92,9 +92,6 @@ DATABASES = {
 
     }
 }
-import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
 
 
 # Password validation
@@ -159,4 +156,5 @@ except ImportError as e:
     if "local_settings" not in str(e):
         raise e
 
-django_heroku.settings(locals())
+import dj_database_url
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
