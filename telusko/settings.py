@@ -93,7 +93,9 @@ DATABASES = {
     }
 }
 
-
+import dj_database_url
+db_from_env =dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -156,5 +158,5 @@ except ImportError as e:
     if "local_settings" not in str(e):
         raise e
 
-import dj_database_url
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+# import dj_database_url
+# DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
