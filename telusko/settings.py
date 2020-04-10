@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 
 import os
-import dj_database_url
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -27,7 +27,7 @@ SECRET_KEY = 'q!^8kffct=uby70_zh+s%kg=4d=9+dkm9zxv8vce29(dnsrcxa'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -85,19 +85,17 @@ WSGI_APPLICATION = 'telusko.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd6bfvaugfk9m3n',
-        'USER' : 'dgphjcooskwfse',
-        'PASSWORD':'7548df5220d537f06db490bee24b508f1e3fdc47a1a9ade4751c2c86aee92cae',
-        'HOST': 'ec2-3-223-21-106.compute-1.amazonaws.com'
-
+        'NAME': 'telusko',
+        'USER' : 'postgres',
+        'PASSWORD':'Ankitha@143',
+        'HOST': 'localhost'
 
     }
 }
-
-
-
+import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env )
+DATABASES['default'].update(db_from_env)
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -161,5 +159,3 @@ except ImportError as e:
     if "local_settings" not in str(e):
         raise e
 
-# import dj_database_url
-# DATABASES['default'] = dj_database_url.config()
