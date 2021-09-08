@@ -11,7 +11,7 @@ idna==2.9
 mysqlclient==1.4.6
 numpy==1.18.2
 pandas==1.0.3
-Pillow==7.0.0
+Pillow==8.3.2
 polls==0.1
 psycopg2==2.8.4
 python-dateutil==1.5
